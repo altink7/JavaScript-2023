@@ -11,9 +11,13 @@ body {
 .labels {
 font-variant: small-caps;
 color: white;
- text-shadow: 2px 2px #ab540f;
+ text-shadow: 2px 2px #9b4d0d;
  font-size: 20px;
  float: left;
+}
+
+.labels p::hover{
+	 background-color: blue;
 }
 
 .infobox, #spielbereich {
@@ -36,5 +40,45 @@ color: white;
 }
 
 #spielbereich {
-	overflow: auto;
+	display: flex;
+  	flex-wrap: wrap;
+  	width: 640px;
+  	height: 640px;
+  	margin: 0 auto;
 }
+  
+.memory-card {
+	width: calc(25% - 10px);
+	height: calc(25% - 10px);
+	margin: 5px;
+	position: relative;
+	transform: scale(1);
+	transition: transform 0.5s;
+	transform-style: preserve-3d;
+  }
+  
+  .memory-card.flip {
+	transform: rotateY(180deg);
+  }
+  
+  .memory-card .front-face,
+  .memory-card .back-face {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+  }
+  
+  .memory-card .front-face {
+	transform: rotateY(0deg);
+  }
+  
+  .memory-card .back-face {
+	transform: rotateY(180deg);
+  }
+  
+  .memory-card.matched {
+	opacity: 0.5;
+	pointer-events: none;
+  }
+  
