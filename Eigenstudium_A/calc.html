@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Taschenrechner</title>
+        <link rel="stylesheet" href="../allgemein_style.css">
+    </head>
+    <body>
+        <script src="calc.js"></script>
+
+        <h1>Taschenrechner</h1>
+
+        <label for="zahl1">Eingabe Zahl 1</label><br>
+        <input type="text" id="zahl1" ><br>
+        <label for="zahl2">Eingabe Zahl 2</label><br>
+        <input type="text" id="zahl2" ><br>
+        <label for="ergebnis">Ergebnis:</label><br>
+        <p id="ergebnis">0</p>
+        <button type="button" onclick="rechne('+')">+</button>
+        <button type="button" onclick="rechne('-')">-</button>
+        <button type="button" onclick="rechne('*')">*</button>
+        <button type="button" onclick="rechne('/')">/</button>
+
+        <ul id="ergebnisliste">
+            <p>Bisherige Ergebnisse:</p>
+        </ul>
+
+        <style>
+            /*spezifische CSS*/
+
+            input {
+                padding: 10px;
+                border-radius: 10px;
+                border: none;
+                box-shadow: 1px 1px #ccc;
+                margin-bottom: 20px;
+                width: 80%;
+                max-width: 400px;
+                font-size: 24px;
+            }
+
+            button {
+                background-color: #2196F3;
+                color: #fff;
+                padding: 15px 20px;
+                border: none;
+                border-radius: 10px;
+                box-shadow: 2px 2px #ccc;
+                font-size: 24px;
+                cursor: pointer;
+                margin-right: 10px;
+                transition: background-color 0.3s;
+            }
+
+            button:hover {
+                background-color: #0D47A1;
+            }
+        </style>
+
+        <footer>
+            <p>© 2023 Altin</p>
+            <p><a href="../index.html">Zurück</a></p>
+        </footer>
+
+    </body>
+</html>

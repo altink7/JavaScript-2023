@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Praesenz 2</title>
+        <link rel="stylesheet" href="../allgemein_style.css">
+
+        <script>
+            function newFunction(){
+                var divreferenz = document.getElementById("meinDiv");
+                divreferenz.parentNode.removeChild(divreferenz);
+
+            }
+
+            function createNode(){
+                var divNeu = document.createElement("div");
+                var textNeu = document.createTextNode("Hello World");
+                divNeu.appendChild(textNeu);
+                divNeu.setAttribute("id","meinDiv");  
+                divNeu.  
+                divNeu.style.backgroundColor = "blue";
+                divNeu.setAttribute("onclick","newFunction(this)")
+                document.getElementById("content").appendChild(divNeu);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="content">
+            CONTENT
+        </div>
+    
+        <button onclick="createNode()">new Node</button>
+    
+        <script>
+            // Additional script can be added here
+        </script>
+    </body>
+</html>
