@@ -5,6 +5,8 @@ Eigenstudium A:
 
     Übung 1 - Taschenrechner 
 
+Eigenstudium B:
+
     Übung 2 - Memory Game
 
 
