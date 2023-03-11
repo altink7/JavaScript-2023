@@ -57,10 +57,6 @@ color: white;
 	transform-style: preserve-3d;
   }
   
-  .memory-card.flip {
-	transform: rotateY(180deg);
-  }
-  
   .memory-card .front-face,
   .memory-card .back-face {
 	position: absolute;
@@ -75,10 +71,5 @@ color: white;
   
   .memory-card .back-face {
 	transform: rotateY(180deg);
-  }
-  
-  .memory-card.matched {
-	opacity: 0.5;
-	pointer-events: none;
-  }
+  }	
   

@@ -77,7 +77,11 @@ function pruefeKarten() {
 
   if (parseInt(firstCard.dataset.framework) + parseInt(secondCard.dataset.framework) == 17) {
     firstCard.style.rotateY = '0deg';
+    firstCard.style.opacity = '0.2';
+    firstCard.style.pointerEvents = 'none';
     secondCard.style.rotateY = '0deg';
+    secondCard.style.opacity = '0.2';
+    secondCard.style.pointerEvents = 'none';
     firstCard.dataset.framework = 0;
     secondCard.dataset.framework = 0;
     firstCard.removeEventListener('click', addeEventListener);

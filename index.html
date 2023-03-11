@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Altin - Web Scripting</title>
     <link rel="stylesheet" href="allgemein_style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        .dark-theme {
+            background-color: #111;
+            color: #fff;
+        }
+        
+    </style>
+
 </head>
 <body>
     <header>
@@ -19,12 +32,73 @@
             <li><a href="Eigenstudium_B/index.html">Memory Spiel</a></li>
             <li><a href="">Refresh</a></li>
         </ul>
+
+        <h2>Rock, Paper, Scissors</h2>
+
+        <div id="game">
+            <!-- three cool bootstrap buttons-->
+            <button id="rock" class="btn btn-primary">Rock</button>
+            <button id="paper" class="btn btn-primary">Paper</button>
+            <button id="scissors" class="btn btn-primary">Scissors</button>
+        </div>
+
+        <p id="result"></p>
     </main>
 
     <footer>
         <p>© 2023 Altin</p>
     </footer>
 
-    
+    <script>
+        function setTheme() {
+            const body = document.querySelector('body');
+            const theme = prompt('Please enter your preferred theme (light or dark):');
+
+            if (theme === 'dark') {
+                body.classList.add('dark-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark-theme');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            document.querySelector('body').classList.add('dark-theme');
+        }
+
+        document.addEventListener('DOMContentLoaded', setTheme);
+
+        const buttons = document.querySelectorAll('#game button');
+        const result = document.querySelector('#result');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const playerChoice = button.id;
+                const computerChoice = computerPlay();
+                const gameResult = playRound(playerChoice, computerChoice);
+                result.textContent = gameResult;
+            });
+        });
+
+        function computerPlay() {
+            const choices = ['rock', 'paper', 'scissors'];
+            const randomIndex = Math.floor(Math.random() * choices.length);
+            return choices[randomIndex];
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection === computerSelection) {
+                return "It's a tie!";
+            } else if (playerSelection === 'rock' && computerSelection === 'scissors' ||
+                       playerSelection === 'paper' && computerSelection === 'rock' ||
+                       playerSelection === 'scissors' && computerSelection === 'paper') {
+                return `You win! ${playerSelection} beats ${computerSelection}.`;
+            } else {
+                return `You lose! ${computerSelection} beats ${playerSelection}.`;
+            }
+        }
+    </script>
 </body>
 </html>
