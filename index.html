@@ -49,56 +49,6 @@
         <p>© 2023 Altin</p>
     </footer>
 
-    <script>
-        function setTheme() {
-            const body = document.querySelector('body');
-            const theme = prompt('Please enter your preferred theme (light or dark):');
-
-            if (theme === 'dark') {
-                body.classList.add('dark-theme');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.classList.remove('dark-theme');
-                localStorage.setItem('theme', 'light');
-            }
-        }
-
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme === 'dark') {
-            document.querySelector('body').classList.add('dark-theme');
-        }
-
-        document.addEventListener('DOMContentLoaded', setTheme);
-
-        const buttons = document.querySelectorAll('#game button');
-        const result = document.querySelector('#result');
-
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                const playerChoice = button.id;
-                const computerChoice = computerPlay();
-                const gameResult = playRound(playerChoice, computerChoice);
-                result.textContent = gameResult;
-            });
-        });
-
-        function computerPlay() {
-            const choices = ['rock', 'paper', 'scissors'];
-            const randomIndex = Math.floor(Math.random() * choices.length);
-            return choices[randomIndex];
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            if (playerSelection === computerSelection) {
-                return "It's a tie!";
-            } else if (playerSelection === 'rock' && computerSelection === 'scissors' ||
-                       playerSelection === 'paper' && computerSelection === 'rock' ||
-                       playerSelection === 'scissors' && computerSelection === 'paper') {
-                return `You win! ${playerSelection} beats ${computerSelection}.`;
-            } else {
-                return `You lose! ${computerSelection} beats ${playerSelection}.`;
-            }
-        }
-    </script>
+    <script src="allgemein.js"></script>
 </body>
 </html>
