@@ -105,11 +105,12 @@ function checkWin() {
   });
   if (counter == 16) {
     alert('Du hast Gewonnen'+ ' | ' + 'Versuche: ' + Versuche + ' | ' + 'Zeit: ' + document.getElementById('Zeit').textContent + ' Sekunden');
-    clearInterval(versucheIntervall);
-    document.querySelectorAll('.memory-card').forEach(card => {
-      card.removeEventListener('click', addeEventListener);
-      card.style.pointerEvents = 'none';
-    });
+    clearInterval();
+    Versuche = 0;
+    document.getElementById('Versuche').textContent = Versuche;
+    while(document.querySelector('#spielbereich').firstChild){
+      document.querySelector('#spielbereich').removeChild(document.querySelector('#spielbereich').firstChild);
+    }
   }
 }
 
