@@ -9,6 +9,10 @@ Eigenstudium B:
 
     Übung 2 - Memory Game
 
+Eigenstudium C:
+
+    Übung 3 - Memory Game   
+
 
 @author Altin Kelmendi
 

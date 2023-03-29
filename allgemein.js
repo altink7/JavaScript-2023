@@ -82,4 +82,15 @@ function length(str) {
   function deepClone(obj) {
     return JSON.parse(JSON.stringify(obj));
   }
+
+  function allImagesFadeInandOutAlwaysjQuery(){
+    $(document).ready(function(){
+      $("img").fadeIn(1000);
+      $("img").fadeOut(1000);
+      setInterval(function(){
+        $("img").fadeIn(1000);
+        $("img").fadeOut(1000);
+      }, 2000);
+    });
+  }
   

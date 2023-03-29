@@ -1,0 +1,36 @@
+body {
+    background-color: #4c82af;
+}
+
+#input {
+    background-color: white;
+    padding-top: 20px;
+    text-align: center;
+    width: 400px;
+    height: 50px;
+    font-size: 20px;
+    border: 1px solid #4c82af;
+    border-radius: 5px;
+}
+
+#list {
+    background-color: white;
+    margin-top: 20px;
+    width: 400px;
+    font-size: 20px;
+    border: 1px solid #4c82af;
+    border-radius: 5px;
+}
+
+.remove {
+    margin-right: 20px;
+    float: right;
+}
+
+button {
+    background-color: #4c82af;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
